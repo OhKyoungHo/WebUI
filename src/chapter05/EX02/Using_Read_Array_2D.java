@@ -4,7 +4,7 @@ public class Using_Read_Array_2D {
 
 	public static void main(String[] args) {
 		// 2차원 배열의 값을 읽기★
-			//1차원 배열 일때 : arr.length ← 열의 갯수
+			//1차원 배열 일때 : arr.length ← 열의 갯수	
 			//2차원 배열 일때 : arr.length ← 행의 갯수
 			//			     arr[i].length	← 열의 갯수 , i : 행의 번호.
 		

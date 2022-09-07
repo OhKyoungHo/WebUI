@@ -1,6 +1,6 @@
 package chapter05.EX02;
 
-public class Using_Rectangle_Array03 {
+public class Using_NonRectangle_Array {
 
 	public static void main(String[] args) {
 		// 비정방형 배열 : 각 행에 대해서 갯수가 다를때
