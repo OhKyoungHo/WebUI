@@ -1,10 +1,10 @@
 package Chapter07.EX01;
 
 class Food{
-	int a ;
+	double a ;
 	String food ;
 	
-	Food(int a , String food){
+	Food(double a , String food){		//객체에 역할 부여
 		this.a = a;
 		this.food = food;
 	}

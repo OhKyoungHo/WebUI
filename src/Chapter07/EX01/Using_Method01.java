@@ -24,7 +24,7 @@ class B{
 	void printMethod (int m) {
 		if(m <= 0 || m > 12) {
 			System.out.println("잘못된 입력되어 메소드 종료됨");
-			return ;			// 메소드 종료
+				return ;			// 메소드 종료, 이건 뒤에 출력형태를 지정하지 않았기 때문에 멈추지 않음
 			//System.out.println("출력되지 않는 부분");	//도달할 수 없는 코드
 		}else {
 			System.out.println("입력한  달은 : " + m + " 달입니다. ");
