@@ -1,6 +1,6 @@
 package Chapter07.EX01;
 
-public class Using_Mehtod03 {
+public class Using_Method03 {
 	
 	//인스턴스 필드 : 객체화 해야만 사용가능
 	int c;		// 인스턴스 필드 : static 키가 붙지 않는 필드(객체화를 해야 사용가능)
@@ -25,7 +25,7 @@ public class Using_Mehtod03 {
 
 	public static void main(String[] args) {
 		// main 메소드도 method 이다.
-		int a; 		//지역 변수이다. ← Srack에 저장, Stack 영역은 강제 초기화가 안됨
+		int a; 		//지역 변수이다. ← Stack에 저장, Stack 영역은 강제 초기화가 안됨
 						// Stack에 값이 저장, main () 메소드 내에서만 사용됨.
 		a = 10;
 		
