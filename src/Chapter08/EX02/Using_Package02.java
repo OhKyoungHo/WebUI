@@ -4,7 +4,7 @@ package Chapter08.EX02;
 	// 동일한 클래스는 import로 사용 불가능
 
 import Chapter08.EX01.A;
-// import Chapter08.EX01.com.A;	//오류 : 동일한 클래스는 import 할 수 없다.
+// import Chapter08.EX01.com.A;	//오류 : 동일한 이름의 클래스는 중복해서 import 할 수 없다.
 // import Chapter08.EX01.B;		//오류발생, 접근제어자가 default, 다른 패키지에서는 접근 불가능
 
 public class Using_Package02 {

@@ -25,9 +25,7 @@ public class Using_Modifier01 {
 		
 		E e = new E();	
 		e.print();
-		e.print1();
-		e.print2();
-		e.print3();
+		
 	}
 
 }

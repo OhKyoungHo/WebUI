@@ -1,7 +1,7 @@
 package Chapter09.EX05;
 
 // static 필드의 값 초기화 : 클래스 내부에서 static (필드의 값을 초기화)
-// 클래스명.필드명, 호출될때 static{  }이 제일 먼저 작도
+// 클래스명.필드명, 호출될때 static{  }이 제일 먼저 작동
 
 class C {
 	int a ;
@@ -39,7 +39,7 @@ public class Using_StaticMethod03 {
 	public static void main(String[] args) {
 		// 객체 생성없이 static 필드 호출
 
-	System.out.println(C.b);	// 출력문 먼저 나온뒤 뒤의 의값이 나옴
+	System.out.println(C.b);	// 출력문 먼저 나온뒤 뒤의 값이 나옴
 	
 //	System.out.println(a); 		//인스턴스 필드 	
 	System.out.println(b); 		//정적 필드
