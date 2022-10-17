@@ -3,8 +3,23 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title> 카레만들기 </title>
+<style typr="text/css">
+ul > li{list-style-type : square;}
+ol>li{list-style-type : none; list-style-image : url(../images/common/icon_h2.gif)}
+
+span{display :none;}
+input:focus + span{ display: block; }
+/* block는 줄바꿈, inline는 줄 바꿈 없음*/
+</style>	
+	
 </head>
 <body>
+
+<input type='text'><span>한글로 5자이내 입력하세요</span>
+<hr/>
+
+
+
 <!--절대경로  -->
 <img src='/WebUI/images/sample/curry.jpg' width='250' height='154'>
 
@@ -12,7 +27,7 @@
 <img src='../images/sample/curry.jpg' alt='당근, 양파, 브로콜리가 들어있고 하얀접시에 담긴 카레'>
 
 <!--element(tag)
-- block 요소 : 기본개행(enter)
+-block 요소 : 기본개행
 - inline 요소: 기본 개행되지 않는 요소 -->
 
 <h1>커리(Curry) 재료</h1><!--h 태그와  li는 자동개행  -->
