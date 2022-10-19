@@ -1,0 +1,58 @@
+<!-- 
+	인자있는 자바스크립스 함수 호출
+	
+	[연습] 이벤트 핸들러 방식이나 이벤트 리스너 방식으로 수정하세요 
+ -->
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 화면 색 바꾸기 </title>
+</head>
+<body>
+	<form name="frm">
+		<input type="button" value="스타일 A" id='btnA'>
+		<input type="button" value="스타일 B" id='btnB'>
+		<input type="button" value="스타일 C" id='btnC'>
+	</form>
+	<ul>
+		<li><a href="http://www.cnn.com"> 여기는 미쿡 </a></li>
+		<li><a href="http://news.bbc.co.uk"> 여기는 영쿡 </a></li>
+	</ul>
+	
+	<!-- 
+			일반적으로 JavaScript는 < head > 안에 기술하는  방법을 많이 씁니다.
+			그러나 필요에 따라 < body > 태그 안에 사용도 합니다.
+			물론, 지금은 그럴 필요가 없지만 < body > 태그 안에 넣어봤음.
+	 -->
+	<script type="text/javascript">
+	
+	window.onload =function(){	//window.onload : 자바스크립트가 문서가 준비된 상황 이후에 발동하도록 하는 역할
+
+		var btnA = document.getElementById('btnA');//화면중에서 btn 찾아오기(여기선 화면이 없기 때문에 나오지 않음→window.onload필요)
+		btnA.onclick = function btn_click(){
+			alert('스타일 A');
+			document.bgColor ='yellow';
+			document.fgColor = 'blue';
+			}	
+		
+		var btnB = document.getElementById('btnB');//화면중에서 btn 찾아오기(여기선 화면이 없기 때문에 나오지 않음→window.onload필요)
+		btnB.onclick = function btn_click(){
+			alert('스타일 B');
+			document.bgColor ='green';
+			document.fgColor = 'red';
+			}	
+		
+		var btnC = document.getElementById('btnC');//화면중에서 btn 찾아오기(여기선 화면이 없기 때문에 나오지 않음→window.onload필요)
+		btnC.onclick = function btn_click(){
+			alert('스타일 C');
+			document.bgColor ='navy';
+			document.fgColor = 'white';
+			}	
+		}	
+	
+	
+	</script>
+</body>
+</html>

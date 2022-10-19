@@ -3,9 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <title> 이벤트 핸들러 연결 </title>
+<script type="text/javascript">
+/* 	function btn_click(){
+		alert('버튼클릭');
+	} */
+
+	var btn_click = function(){
+		alert('버튼클릭2');
+	};//자바스크립트에서는 함수가 하나의 변수의 값이다
+	
+</script>
 </head>
 
 <body>
-	<input type='button' value='눌려' onclick='btn_click()' />
+	<input type='button' value='눌려' onclick='btn_click()' /><!--예전 방식-->
 </body>
 </html>
