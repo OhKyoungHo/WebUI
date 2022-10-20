@@ -7,7 +7,7 @@
 	for(let i=0 ;i<con.length;i++){
 		con[i].onclick = function(evt){
 			alert('ok~');
-			let conprice = evt.target.getAttribute('data-price'); 
+			let conprice = evt.target.getAttribute('data-price'); //getAttribute : 해당 요소에 지정된 값을 반환 
 			alert(conprice);
 		}
 	}

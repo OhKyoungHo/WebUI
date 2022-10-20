@@ -20,10 +20,12 @@ var today = new Date();
 var year = today.getFullYear();
 var month = today.getMonth();
 var date = today.getDate();
+var day = today.getDay(); 
+
 
 var lastDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 var weeks = ['일','월','화','수','목','금','토'];
-
+var dayko = weeks[day];
 
 window.onload = function(){
 	
@@ -31,10 +33,74 @@ window.onload = function(){
 	
 	// 년 구하기
 	for( var j=year-5;  j<= year+5; j++){
-		frm.y.add( new Option(j, j));				// 만들고 브라우저 F12에서 Elements로 확인 : Option(j)와 Option(j,j) 차이
-	}
+		frm.y.add( new Option(j,j));				// 만들고 브라우저 F12에서 Elements로 확인 : Option(j)와 Option(j,j) 차이
+	}												//value값을 못얻어올 경우를 대비해 j,j로 씀			
 
-}
+	for( var m=1; m<=12; m++  ){
+		frm.m.add(new Option(m,m));
+	}
+	
+	for( var d=1; d<=lastDays[month]; d++  ){
+			frm.d.add(new Option(d,d));
+	}
+	for( var i=1; i<=weeks[day]; i++  ){
+		frm.w.add(new Option(i,i));
+	} 
+	
+	//오늘의 연, 월, 일로 화면에 지정
+	
+	frm.y.value = year;
+	frm.m.value = month+1;//***
+	frm.d.value = date;
+	frm.w.value = dayko;
+
+	frm.y.onchange= calc;	//***calc() 절대안됨
+	frm.m.onchange = calc;
+	frm.d.onchange = calc; 
+	frm.w.onchange = calc;
+	
+	function calc(){
+		let year = frm.y.value;
+		let month = frm.m.value;//***
+		let date = frm.d.value;
+		
+		let newday = new Date();
+		newday.setFullYear(year, month-1,date);
+		//(3) 해당 날짜의 요일을 구하여 화면에 출력
+		
+		let week = ['일','월','화','수','목','금','토'];
+		let dayweek = week[newday.getDay()];
+		frm.w.value=dayweek;
+		//ver1
+		if(year%4 ==0){
+			lastDays[1]=29;
+		}
+		//월별로 일자를 설정
+		frm.d.options.length=0;
+		for(let f=1; f<=lastDays[month-1]; f++){
+			frm.d.add(new Option(f,f));
+		} 
+		lastDays[1] =28;
+		//ver2
+		/* for(let f=1; f<=lastDays[month-1]; f++){
+			
+			if(year%4 ==0){
+				lastDays[1]=29;
+			}else{
+				lastDays[1] =28;
+			}	
+			frm.d.add(new Option(f,f));
+		}  */
+		
+		frm.d.value =date
+	}
+		//(1) 화면에서 각각의 년, 월, 일 값을 얻어오기
+		//(2) Date() 객체에 각각의 년, 월, 일 값을 지정하기
+		//(3) 해당 날짜의 요일을 구하여 화면에 출력
+		
+	} 
+
+	
 </script>
 
 </head>

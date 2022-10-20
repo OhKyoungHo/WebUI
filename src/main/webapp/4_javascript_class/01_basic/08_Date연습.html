@@ -11,17 +11,24 @@
 			 
 			 var sDate = new Date(s);
 			 var eDate = new Date(e);
+			 
+			 var diff = eDate - sDate;
+			 //alert(diff);
 
-	
+			//var diff2 = diff/ (1000) ;					//초단위
+			//var diff2 = diff/ (1000*60) ;					//분단위
+			//var diff2 = Math.ceil(diff/ (1000*60*60)) ; 	//시간단위
+			 var diff2 = Math.ceil(diff/ (1000*60*60*24)) ; //일단위
+			 	alert(diff2);
 		}
 	}
 </script>
 </head>
 <body>
-		시작일 : <input type='date'  id='startDate'> 
-		~
-		종요일  : <input type='date' id='endDate'> 
-		
-		<input type='button' id='btn' value='여행일정'>
+	시작일 :<input type='date' id='startDate'> 
+	~ 
+	종료일 :<input type='date' id='endDate'>
+
+	<input type='button' id='btn' value='여행일정'>
 </body>
 </html>

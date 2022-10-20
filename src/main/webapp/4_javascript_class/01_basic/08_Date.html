@@ -8,15 +8,34 @@
 	var d = new Date('2023/08/15');
 	document.writeln( d  + '<br/>');
 	document.writeln( d.getYear()  + '<br/>');
-	document.writeln( d.getFullYear()  + '<br/>');
-	document.writeln( d.getMonth()  + '<br/>');
+	document.writeln( d.getFullYear()  + '<br/>');//***연도를 뽑아올때는 이걸로!!!
+	document.writeln( d.getMonth()  + '<br/>');//7//***외국에서는 달을 0부터 센다 
 	document.writeln( d.getDate()  + '<br/>');
-	document.writeln( d.getDay()  + '<br/>');
+	document.writeln( d.getDay()  + '<hr/>');//일요일을 0으로 시작
 
-
+	var today = new Date();
+	document.writeln(today +'<br/>');
+	document.writeln(today.toLocaleString() +'<br/>');
+	document.writeln(today.toGMTString() +'<br/>');
+	document.writeln(today.toDateString() +'<br/>');
+	document.writeln( today + '<hr/>');
 	
+	//2025-05-12
+	var day = new Date();
+	day.setFullYear(2025);
+	day.setMonth(5-1);//***(5를 넣으면 6으로 인식 그래서 -1함)
+	day.setDate(12);
+	document.writeln(day.toDateString() +'<br/>');
 	
+	var today = new Date();
+	//현재날짜에서 3달 빼기
+	today.setMonth(today.getMonth()-3);
+	//현재날짜에서 20일 더하기
+	today.setDate(today.getDate()+20);
+	document.writeln(today.toDateString() +'<br/>');
 	
+	today.setDate(0);		//전달의 max 값(일 수)을 알 수 있음
+	document.writeln(today.toDateString() +'<br/>');
 	
 	</script>
 

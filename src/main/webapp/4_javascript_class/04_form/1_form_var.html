@@ -5,6 +5,29 @@
 <title></title>
 <script type="text/javascript">
 
+window.onload =function(){
+	
+	//myForm.txt0.value ='하하';
+	//myForm['txt1'].value='호호';	//배열로도 가능
+	
+	//getElementById 이용
+	var btn = document.getElementById('btn').onclick = function(){
+		for(let i=0; i<4 ; i++){
+			//각각의 텍스트 필드에 data-0/ data-1~~
+			myForm['txt'+i].value='data-'+i;
+		}
+	;}	
+	
+	//querySelector 이용
+	/*document.querySelector('#btn').onclick = function(){
+		for(let i=0; i<4 ; i++){
+			//각각의 텍스트 필드에 data-0/ data-1~~
+			myForm['txt'+i].value='data-'+i;
+		}
+	;}	*/
+}
+
+
 </script>
 </head>
 <body>

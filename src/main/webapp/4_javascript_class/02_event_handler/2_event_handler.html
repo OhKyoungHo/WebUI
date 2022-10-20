@@ -7,9 +7,11 @@
 
 	window.onload =function(){	//window.onload : 자바스크립트가 문서가 준비된 상황 이후에 발동하도록 하는 역할
 
-	var btn = document.getElementById('btn');//화면중에서 btn 찾아오기(여기선 화면이 없기 때문에 나오지 않음→window.onload필요)
-	btn.onclick = function btn_click(){
-		alert('버튼클릭3');}	
+		//화면중에서 btn 찾아오기(여기선 화면이 없기 때문에 나오지 않음 → window.onload필요)	
+		var btn = document.getElementById('btn');
+		btn.onclick = function btn_click(){
+			alert('버튼클릭3')
+		;}	
 	}	
 	
 /* 	btn.onclick = btn_click;
