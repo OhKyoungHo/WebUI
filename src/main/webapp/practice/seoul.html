@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 여기가 원래 창 </title>
+	<script type="text/javascript">
+	window.onload = function(){
+		
+		winObj = window.open('choose.html','','width=500, height=650');
+		
+		var sel = frm.name;
+		sel.onchange = function(){
+			winObj.frm1.result.value = this.value;
+		}
+		
+		
+	}	
+
+	</script>
+</head>
+<body bgcolor="white">
+	지역을 골라주세요
+	
+
+	
+<form name='frm'>
+<fieldset>
+  <select id= 'local' name="name" >
+    <option value="none"selected>=== 선택 ===</option>
+    <option value="서울">서울</option>
+    <option value="인천">인천</option>
+    <option value="부산">부산</option>
+  </select>
+  
+ <input type='text' name='result' size='20'/>
+</fieldset>
+</form>
+	
+</body>
+</html>

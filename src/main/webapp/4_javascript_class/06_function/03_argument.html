@@ -5,7 +5,24 @@
 <title> 03_argument.html </title>
 <script type="text/javascript">
 
-//@함수는 인자의 갯수를 체크하지 않는다.
+//★★★@함수는 인자의 갯수를 체크하지 않는다.
+/*
+function multiple(first, second){
+	return first*second;
+}
+document.write('곱은' + multiple(3,4) +"<br/>");		//곱은 12
+document.write('곱은' + multiple(3,4,5) +"<br/>");	//곱은 12//인자 2개까지 인식
+document.write('곱은' + multiple(3) +"<br/>");		//NAN//하나의 숫자와 숫자가 아닌 값을 인식
+*/
+
+function multiple(args){
+	return args.first*args.second;
+}
+
+var obj = { first : 3 , second : 4 };
+document.write('곱은 2 ->' + multiple(obj) +"<br/>");
+
+
 
 </script>
 </head>

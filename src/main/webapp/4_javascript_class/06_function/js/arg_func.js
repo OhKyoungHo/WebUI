@@ -2,7 +2,7 @@
 function arrayProcess( data, f ) {
 	for( key=0; key < data.length; key++ ){
 	//for(var key in data ){
-		f(  data[key].value );
+		f(  data[key].value );//f가 sum 또는 square
 	}
 }
 

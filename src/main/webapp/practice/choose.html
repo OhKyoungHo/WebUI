@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title> 새로 열려진 창 </title>
 <script type="text/javascript">
+
 /****************************
  * 열어준 창의 요소를 찾을 때
  열어준 창 : opener(open()메소드로 열린 윈도우에서 이전 창을 참조)
@@ -11,19 +12,14 @@
 
  */
 
-
-
 window.onload = function(){
-	var sel = frm.site;
+	var sel = frm1.site;
 	for(var i=0 ; i<sel.length; i++){
 		sel[i].onclick = function(){
-			//alert(this.value);//value 값 각 0,1,2 호출 
-			switch(this.value){
-			case  '0' : opener.location.href ='http://www.daum.net'; break; 
-			case  '1' : opener.location.href ='http://www.naver.com';	break; 
-			case  '2' : opener.location.href ='http://www.daum.net';	break; 
-	
-			}
+			//alert(this.value);//value 값 호출 
+			//현재 창의 부속인 iframe 안에 요소는 
+			//iframe의 name값으로 찾는다
+			opener.frm.result.value = this.value;
 			
 		}
 	}
@@ -32,10 +28,11 @@ window.onload = function(){
 </script>
 </head>
 <body>
-	<form name="frm">
-		<input type="radio" name="site" value='0'> 다음 <br>
-		<input type="radio" name="site" value='1' > 네이버 <br>
-		<input type="radio" name="site" value='2'> 네이트 <br>
+	<form name="frm1">
+	 <input type='text' name='result' size='20'/><br/>
+		<input type="radio" name="site" value='가산'> 가산 <br>
+		<input type="radio" name="site" value='판교' > 판교 <br>
+		<input type="radio" name="site" value='부평'> 부평 <br>
 	</form>
 </body>
 </html>

@@ -4,7 +4,23 @@
 	<meta charset="UTF-8">
 	<title> 파라메터 인자</title>
 	<script>
-
+	//1. 함수의 인자로 기본형(call by value)//복사값을 받기 때문에 원래 값에 영향을 주지 않음
+	var pri = 10;//원시값
+	function priParam(pri){
+		pri--;
+		return pri;
+	}
+	document.write('1> 기본형 인자 : ' + priParam(pri)+'<br/>') //9//pri값이 복사되어서 넘어옴
+	document.write('1> 기본형 인자 : ' + pri+'<br/>')//10//원시값은 영향을 받지않아서 10으로 출력
+	
+	//2. 함수의 인자로 참조형(call by reference)//같은 주소를 받아서 하나의 값에 대해서 공유하기 때문에 원래 값에 영향을 줌
+	var ref=[1,2,3,4,5]//[1,2,3,4]
+	function refParam(ref){
+		ref.pop();//마지막요소를 제거하고 리턴//1,2,3,4
+		return ref;
+	}
+	document.write('1> 참조형 인자 : ' + refParam(ref)+'<br/>')//1,2,3,4
+	document.write('2> 참조형 인자 : ' + ref+'<br/>')//1,2,3,4
 	</script>
 </head>
 

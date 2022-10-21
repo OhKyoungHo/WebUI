@@ -3,8 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <script type="text/javascript">
+
+/*//***************
+ * iframe에서 밖의 창의 요소를 찾을 때 "parent" 이용
+ 아이프레임(iframe)일 경우 parent로 부모창을 제어한다.
+ */
 	function sel(){
-		
+		parent.frm.result.value=frm.gender.value;
 	}
 </script>
 <title></title>
