@@ -11,20 +11,16 @@
 
  */
 
-
-
 window.onload = function(){
-	var sel = frm.site;
+	var sel = frm.site;		//배열로 됨
 	for(var i=0 ; i<sel.length; i++){
 		sel[i].onclick = function(){
 			//alert(this.value);//value 값 각 0,1,2 호출 
 			switch(this.value){
-			case  '0' : opener.location.href ='http://www.daum.net'; break; 
+			case  '0' : opener.location.href ='http://www.daum.net'; 	break; 
 			case  '1' : opener.location.href ='http://www.naver.com';	break; 
 			case  '2' : opener.location.href ='http://www.daum.net';	break; 
-	
 			}
-			
 		}
 	}
 }

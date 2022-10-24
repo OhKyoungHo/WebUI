@@ -6,16 +6,22 @@
 <script type="text/javascript">
 /*  콜백함수란? 함수가 다른 함수의 파라메터로 전달되는 함수
 		 			콜백함수는 함수가 실행되는 중간에 호출되어 상태 정보를 저장하거나 결과 값을 처리할 때 사용
+		 	개발자는 단지 함수를 등록하기만 하고, 어떤 이벤트가 발생했거나 특정 시점에 도달했을 때 시스템에서 호출하는 함수		
  */
  
-/* 		//------ 함수 선언
-		  function add(a,b){
-			
-		 }
+ //------ 함수 선언
+ function add(a,b,c){
+	var result = a + b;
+	c(result);//'결과: 30' 출력 
+	return result;//30
+}
 		
-		//------ 함수 호출
-		add(10,20); 
-*/
+//------ 함수 호출
+//함수의 인자로 다른 함수안에 들어갈 수있다.
+var resultVar = add(10,20,function(res){
+								document.write('결과:'+ res +'<br/>')
+						}); 
+document.write('리턴 결과 :' + resultVar);//리턴결과 :30
 		
 
 		

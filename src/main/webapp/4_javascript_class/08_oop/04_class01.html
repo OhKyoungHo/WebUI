@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> class 명령02 </title>
+<script type="text/javascript">
+
+/*  class 명령어로 클래스 정의하기 (es6)  */
+ 
+// 클래스를 변수 선언한 방식(Class 표현식은 class를 정의하는 또 다른 방법)
+let Member = class {
+			// 생성자(생성자 함수는 constructor로 이름이 미리 약속)
+			constructor(firstname, lastname,  age){
+				this.firstname = firstname;	//멤버변수
+				this.lastname = lastname;
+				this.age = age;
+			} 
+			
+			// 메소드
+			getFullName(){
+				return this.firstname + " " + this.lastname;
+			}	
+		}
+
+let m = new Member('홍길','동', 25);
+document.write(m.getFullName()); 
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
