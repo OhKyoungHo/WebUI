@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CAFE</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+    
+     <script src="../lib/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+    window.onload = function(){        
+     
+        let btn1 = document.getElementById('c1');
+        let btn2 = document.getElementById('c2');
+        let btn3 = document.getElementById('c3');
+        let btn4 = document.getElementById('c4');
+        let btn5 = document.getElementById('c5');
+        let btn6 = document.getElementById('c6');
+        let btn7 = document.getElementById('c7');
+        let btn8 = document.getElementById('c8');
+        let btn9 = document.getElementById('c9');
+       
+                
+        
+        let table = document.getElementById('listTable');
+        let result = document.getElementById('result');
+        
+        
+        let price = document.getElementById('total');
+        $tab = document.getElementById('listTable')
+        
+        result.onclick=function(){
+        	alert('주문완료!');       	
+        	document.frm.total.value='';
+
+        	if($tab.rows.length != 3){
+        		let pix= $tab.rows.length;
+        		for(let i=0; i < pix-3; i++){
+            		$tab.deleteRow(-1);  
+            	}
+        	}       
+        	
+        }
+        
+        
+        btn1.onclick=function(){
+            insertOrder(table,'에스프레소', 1);           
+        }         
+        btn2.onclick=function(){
+            insertOrder(table,'아메리카노',2);            
+        } 
+        
+        btn3.onclick=function(){
+            insertOrder(table,'카페라떼',3);            
+        } 
+        btn4.onclick=function(){
+            insertOrder(table,'카푸치노',4);            
+        } 
+        btn5.onclick=function(){
+            insertOrder(table,'돌체라떼',5);            
+        } 
+        btn6.onclick=function(){
+            insertOrder(table,'카페모카',6);            
+        } 
+        btn7.onclick=function(){
+            insertOrder(table,'자바칩 프라프치노',7);            
+        } 
+        btn8.onclick=function(){
+            insertOrder(table,'차이 티',8);            
+        } 
+        
+        btn9.onclick=function(){
+            insertOrder(table,'그린 티',9);            
+        } 
+        
+       
+        
+        
+        
+  }
+    function insertOrder(table,name , sel){       
+		// 1. 입력한 값들을 얻어온다.
+		if(sel == 1){
+			let hot = document.getElementById('menu1HOT').value;
+			let su = document.getElementById('menu1Count').value;
+			$ta = document.getElementById('listTable');
+			let check = 0;
+			
+			if(su != 0){
+				 for(let i=3; i<$ta.rows.length; i++){
+						if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '에스프레소' && document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == hot ){
+							let a = +document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML;
+							document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML = (+a) + (+su);
+							check= 1;
+						}
+					} 
+					
+					if(check == 0){
+						Order(table,name, hot, su);
+					}
+					
+					Cal(table);
+			}else{
+				alert('수량을 확인해주세요.');
+			}
+			
+		}else if(sel == 2){
+			let hot = document.getElementById('menu2HOT').value;
+			let su = document.getElementById('menu2Count').value;
+			
+			$ta = document.getElementById('listTable');
+			let check = 0;
+			
+			if(su != 0){
+			for(let i=3; i<$ta.rows.length; i++){
+				if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '아메리카노' && document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == hot ){
+					document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML = (+document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML) + (+su);
+					check= 1;
+				}
+			} 
+			
+			if(check == 0){
+				Order(table,name, hot, su);
+			}
+			
+			Cal(table);
+			}else{
+				alert('수량을 확인해주세요.');
+			}
+			
+		}else if(sel == 3){
+			let hot = document.getElementById('menu3HOT').value;
+			let su = document.getElementById('menu3Count').value;	
+			$ta = document.getElementById('listTable');
+			let check = 0;
+			
+			if(su != 0){
+			for(let i=3; i<$ta.rows.length; i++){
+				if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '카페라떼' && document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == hot ){
+					let a = +document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML;
+					document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML = (+a) + (+su);
+					check= 1;
+				}
+			} 
+			
+			if(check == 0){
+				Order(table,name, hot, su);
+			}
+			
+			Cal(table);
+			}else{
+				alert('수량을 확인해주세요.');
+			}
+			
+		}else if(sel == 4){
+			let hot = document.getElementById('menu4HOT').value;
+			let su = document.getElementById('menu4Count').value;	
+			$ta = document.getElementById('listTable');
+			let check = 0;
+			
+			if(su != 0){
+			for(let i=3; i<$ta.rows.length; i++){
+				if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '카푸치노' && document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == hot ){
+					let a = +document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML;
+					document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML = (+a) + (+su);
+					check= 1;
+				}
+			} 
+			
+			if(check == 0){
+				Order(table,name, hot, su);
+			}
+			
+				Cal(table);
+			}else{
+				alert('수량을 확인해주세요.');
+			}
+		}else if(sel == 5){
+			let hot = document.getElementById('menu5HOT').value;
+			let su = document.getElementById('menu5Count').value;	
+			$ta = document.getElementById('listTable');
+			let check = 0;
+			
+			if(su != 0){
+			for(let i=3; i<$ta.rows.length; i++){
+				if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '돌체라떼' && document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == hot ){
+					let a = +document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML;
+					document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML = (+a) + (+su);
+					check= 1;
+				}
+			} 
+			
+			if(check == 0){
+				Order(table,name, hot, su);
+			}
+			
+			Cal(table);
+			}else{
+				alert('수량을 확인해주세요.');
+			}
+		}else if(sel == 6){
+			let hot = document.getElementById('menu6HOT').value;
+			let su = document.getElementById('menu6Count').value;	
+			$ta = document.getElementById('listTable');
+			let check = 0;
+			
+			if(su != 0){
+			for(let i=3; i<$ta.rows.length; i++){
+				if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '카페모카' && document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == hot ){
+					let a = +document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML;
+					document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML = (+a) + (+su);
+					check= 1;
+				}
+			} 
+			
+			if(check == 0){
+				Order(table,name, hot, su);
+			}
+			
+			Cal(table);
+			}else{
+				alert('수량을 확인해주세요.');
+			}
+		}else if(sel == 7){
+			let hot = document.getElementById('menu7HOT').value;
+			let su = document.getElementById('menu7Count').value;	
+			$ta = document.getElementById('listTable');
+			let check = 0;
+			
+			if(su != 0){
+			for(let i=3; i<$ta.rows.length; i++){
+				if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '자바칩 프라프치노' && document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == hot ){
+					let a = +document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML;
+					document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML = (+a) + (+su);
+					check= 1;
+				}
+			} 
+			
+			if(check == 0){
+				Order(table,name, hot, su);
+			}
+			
+			Cal(table);
+			}else{
+				alert('수량을 확인해주세요.');
+			}
+		}else if(sel == 8){
+			let hot = document.getElementById('menu8HOT').value;
+			let su = document.getElementById('menu8Count').value;	
+			$ta = document.getElementById('listTable');
+			let check = 0;
+			
+			if(su != 0){
+			for(let i=3; i<$ta.rows.length; i++){
+				if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '차이 티' && document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == hot ){
+					let a = +document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML;
+					document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML = (+a) + (+su);
+					check= 1;
+				}
+			} 
+			
+			if(check == 0){
+				Order(table,name, hot, su);
+			}
+			
+			Cal(table);
+			}else{
+				alert('수량을 확인해주세요.');
+			}
+		}else if(sel == 9){
+			let hot = document.getElementById('menu9HOT').value;
+			let su = document.getElementById('menu9Count').value;	
+			$ta = document.getElementById('listTable');
+			let check = 0;
+			
+			if(su != 0){
+				for(let i=3; i<$ta.rows.length; i++){
+					if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '그린 티' && document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == hot ){
+						let a = +document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML;
+						document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML = (+a) + (+su);
+						check= 1;
+					}
+				} 
+			
+				if(check == 0){
+					Order(table,name, hot, su);
+				}
+			
+				Cal(table);
+				}else{
+					alert('수량을 확인해주세요.');
+				}
+		}
+		}		
+	
+	  
+    
+    
+    
+    
+    function Order(table,name, hot, su){		
+		//버튼 만들기
+		let button = document.createElement('button');
+		let bText = document.createTextNode('삭제');
+		button.appendChild(bText);
+		
+		// 3. tr 요소와 td 요소를 생성한다.
+		let tr =document.createElement('tr');
+		let td1 = document.createElement('td');
+		let td2 = document.createElement('td');
+		let td3 = document.createElement('td');
+      	let td4 = document.createElement('td');
+      	if(name == '에스프레소' && hot == 'HOT'){
+      		td4.id = 'd11';
+		}else if(name == '에스프레소' && hot == 'ICE'){
+			td4.id = 'd12';
+		}else if(name == '아메리카노' && hot == 'HOT'){
+			td4.id = 'd21';
+		}else if(name == '아메리카노' && hot == 'ICE'){
+			td4.id = 'd22';
+		}else if(name == '카페라떼' && hot == 'HOT'){
+			td4.id = 'd31';
+		}else if(name == '카페라떼' && hot == 'ICE'){
+			td4.id = 'd32';
+		}else if(name == '카푸치노' && hot == 'HOT'){
+			td4.id = 'd41';
+		}else if(name == '카푸치노' && hot == 'ICE'){
+			td4.id = 'd42';
+		}else if(name == '돌체라떼' && hot == 'HOT'){
+			td4.id = 'd51';
+		}else if(name == '돌체라떼' && hot == 'ICE'){
+			td4.id = 'd52';
+		}else if(name == '카페모카' && hot == 'HOT' ){
+			td4.id = 'd61';
+		}else if(name == '카페모카' && hot == 'ICE'){
+			td4.id = 'd62';
+		}else if(name == '자바칩 프라프치노' && hot == 'HOT'){			
+			td4.id = 'd71';
+		}else if(name == '자바칩 프라프치노' && hot == 'ICE'){			
+			td4.id = 'd72';
+		}else if(name == '차이 티' && hot == 'HOT'){
+			td4.id = 'd81';
+		}else if(name == '차이 티' && hot == 'ICE'){
+			td4.id = 'd82';
+		}else if(name == '그린 티' && hot == 'HOT'){
+			td4.id = 'd91';
+		}else if(name == '그린 티' && hot == 'ICE'){
+			td4.id = 'd92';
+		}
+      	
+
+		
+		// 4. 텍스트노드(1번의 입력값)로 생성한다.
+		let txt1 = document.createTextNode(name);
+		let txt2 = document.createTextNode(hot);
+		let txt3 = document.createTextNode(su);
+      
+		
+		// 5. td 요소에 텍스트노드를 붙인다.
+		td1.appendChild(txt1);
+		td2.appendChild(txt2);
+		td3.appendChild(txt3);
+    	  td4.appendChild(button);
+		
+		// 6. tr 요소에 생성한 td 요소를 붙인다.
+		tr.appendChild(td1);
+		tr.appendChild(td2);
+		tr.appendChild(td3);
+     	 tr.appendChild(td4);
+		
+		// 7. 테이블요소에 tr요소를 붙인다.
+		table.appendChild(tr);
+		
+		if(name == '에스프레소'){
+			
+			if(hot =='HOT'){
+				
+				let dbtn11 = document.getElementById('d11');
+				
+				 dbtn11.onclick=function(){
+		       	 for(let i=3; i<$ta.rows.length; i++){
+							if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '에스프레소' &&
+									document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == 'HOT' ){
+								$tab.deleteRow(i);
+								Cal(table);
+							}
+						} 			
+		       } 			
+			}else{
+				
+				let dbtn12 = document.getElementById('d12');
+				
+				 dbtn12.onclick=function(){
+			       	 for(let i=3; i<$ta.rows.length; i++){
+								if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '에스프레소' &&
+										document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == 'ICE' ){
+									$tab.deleteRow(i);
+									Cal(table);
+								}
+							} 			
+			       } 			
+			}					
+		}else if(name == '아메리카노'){
+			if(hot =='HOT'){
+				
+				let dbtn21 = document.getElementById('d21');
+				
+				 dbtn21.onclick=function(){
+		       	 for(let i=3; i<$ta.rows.length; i++){
+							if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '아메리카노' &&
+									document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == 'HOT' ){
+								$tab.deleteRow(i);
+								Cal(table);
+							}
+						} 			
+		       } 			
+			}else{
+				
+				let dbtn22 = document.getElementById('d22');
+				
+				 dbtn22.onclick=function(){
+			       	 for(let i=3; i<$ta.rows.length; i++){
+								if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '아메리카노' &&
+										document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == 'ICE' ){
+									$tab.deleteRow(i);
+									Cal(table);
+								}
+							} 			
+			       } 			
+			}		
+		}else if(name == '카페라떼'){
+			if(hot =='HOT'){
+				
+				let dbtn31 = document.getElementById('d31');
+				
+				 dbtn31.onclick=function(){
+		       	 for(let i=3; i<$ta.rows.length; i++){
+							if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '카페라떼' &&
+									document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == 'HOT' ){
+								$tab.deleteRow(i);
+								Cal(table);
+							}
+						} 			
+		       } 			
+			}else{
+				
+				let dbtn32 = document.getElementById('d32');
+				
+				 dbtn32.onclick=function(){
+			       	 for(let i=3; i<$ta.rows.length; i++){
+								if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '카페라떼' &&
+										document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == 'ICE' ){
+									$tab.deleteRow(i);
+									Cal(table);
+								}
+							} 			
+			       } 			
+			}		
+		}else if(name == '카푸치노'){
+			if(hot =='HOT'){
+				
+				let dbtn41 = document.getElementById('d41');
+				
+				 dbtn41.onclick=function(){
+		       	 for(let i=3; i<$ta.rows.length; i++){
+							if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '카푸치노' &&
+									document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == 'HOT' ){
+								$tab.deleteRow(i);
+								Cal(table);
+							}
+						} 			
+		       } 			
+			}else{
+				
+				let dbtn42 = document.getElementById('d42');
+				
+				 dbtn42.onclick=function(){
+			       	 for(let i=3; i<$ta.rows.length; i++){
+								if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '카푸치노' &&
+										document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == 'ICE' ){
+									$tab.deleteRow(i);
+									Cal(table);
+								}
+							} 			
+			       } 			
+			}		
+		}else if(name == '돌체라떼'){
+			if(hot =='HOT'){
+				
+				let dbtn51 = document.getElementById('d51');
+				
+				 dbtn51.onclick=function(){
+		       	 for(let i=3; i<$ta.rows.length; i++){
+							if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '돌체라떼' &&
+									document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == 'HOT' ){
+								$tab.deleteRow(i);
+								Cal(table);
+							}
+						} 			
+		       } 			
+			}else{
+				
+				let dbtn52 = document.getElementById('d52');
+				
+				 dbtn52.onclick=function(){
+			       	 for(let i=3; i<$ta.rows.length; i++){
+								if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '돌체라떼' &&
+										document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == 'ICE' ){
+									$tab.deleteRow(i);
+									Cal(table);
+								}
+							} 			
+			       } 			
+			}		
+		}else if(name == '카페모카'){
+			if(hot =='HOT'){
+				
+				let dbtn61 = document.getElementById('d61');
+				
+				 dbtn61.onclick=function(){
+		       	 for(let i=3; i<$ta.rows.length; i++){
+							if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '카페모카' &&
+									document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == 'HOT' ){
+								$tab.deleteRow(i);
+								Cal(table);
+							}
+						} 			
+		       } 			
+			}else{
+				
+				let dbtn62 = document.getElementById('d62');
+				
+				 dbtn62.onclick=function(){
+			       	 for(let i=3; i<$ta.rows.length; i++){
+								if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '카페모카' &&
+										document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == 'ICE' ){
+									$tab.deleteRow(i);
+									Cal(table);
+								}
+							} 			
+			       } 			
+			}		
+		}else if(name == '자바칩 프라프치노'){
+			if(hot =='HOT'){
+			
+				let dbtn71 = document.getElementById('d71');
+				
+				 dbtn71.onclick=function(){
+		       	 for(let i=3; i<$ta.rows.length; i++){
+							if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '자바칩 프라프치노' &&
+									document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == 'HOT' ){
+								$tab.deleteRow(i);
+								Cal(table);
+							}
+						} 			
+		       } 			
+			}else{
+				
+				let dbtn72 = document.getElementById('d72');
+				
+				 dbtn72.onclick=function(){
+			       	 for(let i=3; i<$ta.rows.length; i++){
+								if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '자바칩 프라프치노' &&
+										document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == 'ICE' ){
+									$tab.deleteRow(i);
+									Cal(table);
+								}
+							} 			
+			       } 			
+			}		
+		}else if(name == '차이 티'){
+			if(hot =='HOT'){
+				
+				let dbtn81 = document.getElementById('d81');
+				
+				 dbtn81.onclick=function(){
+		       	 for(let i=3; i<$ta.rows.length; i++){
+							if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '차이 티' &&
+									document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == 'HOT' ){
+								$tab.deleteRow(i);
+								Cal(table);
+							}
+						} 			
+		       } 			
+			}else{
+				
+				let dbtn82 = document.getElementById('d82');
+				
+				 dbtn82.onclick=function(){
+			       	 for(let i=3; i<$ta.rows.length; i++){
+								if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '차이 티' &&
+										document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == 'ICE' ){
+									$tab.deleteRow(i);
+									Cal(table);
+								}
+							} 			
+			       } 			
+			}		
+		}else if(name == '그린 티'){
+			if(hot =='HOT'){
+				
+				let dbtn91 = document.getElementById('d91');
+				
+				 dbtn91.onclick=function(){
+		       	 for(let i=3; i<$ta.rows.length; i++){
+							if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '그린 티' &&
+									document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == 'HOT' ){
+								$tab.deleteRow(i);
+								Cal(table);
+							}
+						} 			
+		       } 			
+			}else{
+	
+				let dbtn92 = document.getElementById('d92');
+				
+				 dbtn92.onclick=function(){
+			       	 for(let i=3; i<$ta.rows.length; i++){
+								if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '그린 티' &&
+										document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerHTML == 'ICE' ){
+									$tab.deleteRow(i);
+									Cal(table);
+								}
+							} 			
+			       } 			
+						
+				}
+		} 
+	
+	}
+    
+	 function Cal(table){
+		 
+		 let total = 0;
+		 
+		 for(let i=3; i<$ta.rows.length; i++){
+				if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '에스프레소' ){
+					let a = +document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML;
+					total = ((+a)*1000)+(+total);
+				}				
+				if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '아메리카노'){
+					let a = +document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML;
+					total = ((+a)*2000)+(+total);
+				}
+				if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '카페라떼'){
+					let a = +document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML;
+					total = ((+a)*3000)+(+total);
+				}
+				if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '카푸치노'){
+					let a = +document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML;
+					total = ((+a)*2000)+(+total);
+				}
+				if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '돌체라떼'){
+					let a = +document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML;
+					total = ((+a)*1000)+(+total);
+				}
+				if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '카페모카'){
+					let a = +document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML;
+					total = ((+a)*1500)+(+total);
+				}
+				if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '자바칩 프라프치노'){
+					let a = +document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML;
+					total = ((+a)*2000)+(+total);
+				}
+				if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '차이 티'){
+					let a = +document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML;
+					total = ((+a)*1000)+(+total);
+				}
+				if(document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML == '그린 티'){
+					let a = +document.getElementById("listTable").getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerHTML;
+					total = ((+a)*1500)+(+total);
+				}
+				
+				
+				
+		}
+		
+		
+	
+		 document.frm.total.value=total;
+	}
+  
+        
+    
+    </script>
+ <link rel="stylesheet" type="text/css" href="style.css">
+ <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<nav id="topMenu" >
+                <ul>
+                        <li><a class="menuLink" href="#"><img src="https://i.imgur.com/HQUTaAo.png"></a></li>
+                        <li><a class="menuLink" href="#">popular</a></li>
+                        <li><a class="menuLink" href="#menu1">coffee</a></li>
+                        <li><a class="menuLink" href="#cake">dessert</a></li>
+                </ul>
+        </nav>
+
+<form name="frm">    
+	<div id="leftdiv" style="overflow:scroll; width:850px; height:600px;" >
+		<table class="menutbest">
+	
+			<tr class="menus">
+				<td id='menu1' class='menu'>
+					<figure class="snip1382">
+		              <img src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[25]_20210415144211211.jpg" />
+		              <figcaption>
+		                <h2>에스프레소</h2>
+		                <p>알레르기 반응 있을시 섭취를 중단하세요.</p>
+		                <div class="icons"><a href="#"><i class="ion-chatbubbles"></i></a>
+		                  <a href="#"> <i class="ion-person-add"></i></a>
+		                  <a href="#"> <i class="ion-heart"></i></a>
+		                </div>
+		              </figcaption>
+		            </figure>
+					<span id="label1" value = '에스프레소'>에스프레소</span>
+					<span id="price1" value = '1000'>1000원</span>
+					<br/>
+					<select name="menu1Count" id="menu1Count" class='menuCount'>
+						<option value='0'>0</option>
+						<option value='1'>1</option>
+						<option value='2'>2</option>
+						<option value='3'>3</option>
+						<option value='4'>4</option>
+						<option value='5'>5</option>
+					</select>
+		            <select name="menu1HOT" id="menu1HOT" class='"HOTCount'>
+						<option value='HOT'>HOT</option>
+						<option value='ICE'>ICE</option>
+					</select>
+		            <input type='button' id='c1' value='선택'  id='btn' />
+				</td>
+				<td id='menu2' class='menu'>
+					<figure class="snip1382">
+		              <img src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[94]_20210430103337006.jpg" />
+		              <figcaption>
+		                <h2>아메리카노</h2>
+		                <p>알레르기 반응 있을시 섭취를 중단하세요.</p>
+		                <div class="icons"><a href="#"><i class="ion-chatbubbles"></i></a>
+		                  <a href="#"> <i class="ion-person-add"></i></a>
+		                  <a href="#"> <i class="ion-heart"></i></a>
+		                </div>
+		              </figcaption>
+		            </figure>
+					<span id="label2" value = '아메리카노'>아메리카노</span> 
+					<span id="price2" value = '2000'>2000원</span><br/>
+					<select name="menu2Count" id="menu2Count" class='menuCount'>
+						<option value='0'>0</option>
+						<option value='1'>1</option>
+						<option value='2'>2</option>
+						<option value='3'>3</option>
+						<option value='4'>4</option>
+						<option value='5'>5</option>
+					</select>
+		             <select name="menu2HOT" id="menu2HOT" class='"HOTCount'>
+						<option value='HOT'>HOT</option>
+						<option value='ICE'>ICE</option>
+					</select>
+		            <input type='button' id='c2' value='선택'  id='btn'/>
+				</td>
+				<td id='menu3' class='menu'>
+					<figure class="snip1382">
+		              <img src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[41]_20210415133833725.jpg" />
+		              <figcaption>
+		                <h2>카페라떼</h2>
+		                <p>알레르기 반응 있을시 섭취를 중단하세요.</p>
+		                <div class="icons"><a href="#"><i class="ion-chatbubbles"></i></a>
+		                  <a href="#"> <i class="ion-person-add"></i></a>
+		                  <a href="#"> <i class="ion-heart"></i></a>
+		                </div>
+		              </figcaption>
+		            </figure>
+					<span id="label3" value = '카페라떼'>카페라떼</span>
+					<span id="price3" value = '3000'>3000원</span><br/>
+					<select name="menu3Count" id="menu3Count" class='menuCount'>
+						<option value='0'>0</option>
+						<option value='1'>1</option>
+						<option value='2'>2</option>
+						<option value='3'>3</option>
+						<option value='4'>4</option>
+						<option value='5'>5</option>
+					</select>
+		             <select name="menu3HOT" id="menu3HOT" class='"HOTCount'>
+						<option value='HOT'>HOT</option>
+						<option value='ICE'>ICE</option>
+					</select>
+		            <input type='button' id='c3' value='선택'  id='btn'/>
+				</td>
+				
+			</tr>
+			<tr class="menus">
+				<td id='menu1' class='menu'>
+					<figure class="snip1382">
+		              <img src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[38]_20210415154821846.jpg" />
+		              <figcaption>
+		                <h2>카푸치노</h2>
+		                <p>알레르기 반응 있을시 섭취를 중단하세요.</p>
+		                <div class="icons"><a href="#"><i class="ion-chatbubbles"></i></a>
+		                  <a href="#"> <i class="ion-person-add"></i></a>
+		                  <a href="#"> <i class="ion-heart"></i></a>
+		                </div>
+		              </figcaption>
+		            </figure>
+					<span id="label4" value = '카푸치노'>카푸치노</span>
+					<span id="price4" value = '2000'>2000원</span>
+					<br/>
+					<select name="menu4Count" id="menu4Count" class='menuCount'>
+						<option value='0'>0</option>
+						<option value='1'>1</option>
+						<option value='2'>2</option>
+						<option value='3'>3</option>
+						<option value='4'>4</option>
+						<option value='5'>5</option>
+					</select>
+		             <select name="menu4HOT" id="menu4HOT" class='"HOTCount'>
+						<option value='HOT'>HOT</option>
+						<option value='ICE'>ICE</option>
+					</select>
+		            <input type='button' id='c4' value='선택'  id='btn'/>
+				</td>
+				<td id='menu2' class='menu'>
+					<figure class="snip1382">
+		              <img src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[128692]_20210426091933665.jpg" />
+		              <figcaption>
+		                <h2>돌체라떼</h2>
+		                <p>알레르기 반응 있을시 섭취를 중단하세요.</p>
+		                <div class="icons"><a href="#"><i class="ion-chatbubbles"></i></a>
+		                  <a href="#"> <i class="ion-person-add"></i></a>
+		                  <a href="#"> <i class="ion-heart"></i></a>
+		                </div>
+		              </figcaption>
+		            </figure>
+					<span id="label5" value = '돌체라떼'>돌체라떼</span> 
+					<span id="price5" value = '1000'>1000원</span><br/>
+					<select name="menu5Count" id="menu5Count" class='menuCount'>
+						<option value='0'>0</option>
+						<option value='1'>1</option>
+						<option value='2'>2</option>
+						<option value='3'>3</option>
+						<option value='4'>4</option>
+						<option value='5'>5</option>
+					</select>
+		             <select name="menu5HOT" id="menu5HOT" class='"HOTCount'>
+						<option value='HOT'>HOT</option>
+						<option value='ICE'>ICE</option>
+					</select>
+		            <input type='button' id='c5'value='선택'  id='btn'/>
+				</td>
+				<td id='menu3' class='menu'>
+					<figure class="snip1382">
+		              <img src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[46]_20210415134438165.jpg" />
+		              <figcaption>
+		                <h2>카페모카</h2>
+		                <p>알레르기 반응 있을시 섭취를 중단하세요.</p>
+		                <div class="icons"><a href="#"><i class="ion-chatbubbles"></i></a>
+		                  <a href="#"> <i class="ion-person-add"></i></a>
+		                  <a href="#"> <i class="ion-heart"></i></a>
+		                </div>
+		              </figcaption>
+		            </figure>
+					<span id="label6" value = '카페모카'>카페모카</span>
+					<span id="price6" value = '1500'>1500원</span><br/>
+					<select name="menu6Count" id="menu6Count" class='menuCount'>
+						<option value='0'>0</option>
+						<option value='1'>1</option>
+						<option value='2'>2</option>
+						<option value='3'>3</option>
+						<option value='4'>4</option>
+						<option value='5'>5</option>
+					</select>
+		             <select name="menu6HOT" id="menu6HOT" class='"HOTCount'>
+						<option value='HOT'>HOT</option>
+						<option value='ICE'>ICE</option>
+					</select>
+		            
+		            <input type='button' id='c6' value='선택'  id='btn'/>
+				</td>
+			</tr>
+			<tr class="menus">
+				<td id='menu1' class='menu'>
+					<figure class="snip1382">
+		              <img src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[168016]_20210415154152122.jpg" />
+		              <figcaption>
+		                <h2>자바칩 프라푸치노</h2>
+		                <p>알레르기 반응 있을시 섭취를 중단하세요.</p>
+		                <div class="icons"><a href="#"><i class="ion-chatbubbles"></i></a>
+		                  <a href="#"> <i class="ion-person-add"></i></a>
+		                  <a href="#"> <i class="ion-heart"></i></a>
+		                </div>
+		              </figcaption>
+		            </figure>
+					<span id="label7" value = '자바칩 프라푸치노'>자바칩 프라푸치노</span>
+					<span id="price7" value = '2000'>2000원</span>
+					<br/>
+					<select name="menu7Count" id="menu7Count" class='menuCount'>
+						<option value='0'>0</option>
+						<option value='1'>1</option>
+						<option value='2'>2</option>
+						<option value='3'>3</option>
+						<option value='4'>4</option>
+						<option value='5'>5</option>
+					</select>
+		             <select name="menu7HOT" id="menu7HOT" class='"HOTCount'>
+						<option value='HOT'>HOT</option>
+						<option value='ICE'>ICE</option>
+					</select>
+		            
+		            <input type='button' id='c7'value='선택'  id='btn'/>
+				</td>
+				<td id='menu2' class='menu'>
+					<figure class="snip1382">
+		              <img src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[135608]_20210415154244810.jpg" />
+		              <figcaption>
+		                <h2>차이 티</h2>
+		                <p>알레르기 반응 있을시 섭취를 중단하세요.</p>
+		                <div class="icons"><a href="#"><i class="ion-chatbubbles"></i></a>
+		                  <a href="#"> <i class="ion-person-add"></i></a>
+		                  <a href="#"> <i class="ion-heart"></i></a>
+		                </div>
+		              </figcaption>
+		            </figure>
+					<span id="label8" value = '차이 티'>차이 티</span> 
+					<span id="price8" value = '1000'>1000원</span><br/>
+					<select name="menu8Count" id="menu8Count" class='menuCount'>
+						<option value='0'>0</option>
+						<option value='1'>1</option>
+						<option value='2'>2</option>
+						<option value='3'>3</option>
+						<option value='4'>4</option>
+						<option value='5'>5</option>
+					</select>
+		             <select name="menu8HOT" id="menu8HOT" class='"HOTCount'>
+						<option value='HOT'>HOT</option>
+						<option value='ICE'>ICE</option>
+					</select>
+		            
+		            <input type='button' id='c8' value='선택'  id='btn'/>
+				</td>
+				<td id='menu3' class='menu'>
+					<figure class="snip1382">
+		              <img src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[9200000002496]_20210419131039350.jpg" />
+		              <figcaption>
+		                <h2>그린 티</h2>
+		                <p>알레르기 반응 있을시 섭취를 중단하세요.</p>
+		                <div class="icons"><a href="#"><i class="ion-chatbubbles"></i></a>
+		                  <a href="#"> <i class="ion-person-add"></i></a>
+		                  <a href="#"> <i class="ion-heart"></i></a>
+		                </div>
+		              </figcaption>
+		            </figure>
+					<span id="label9" value='그린 티'>그린 티 </span>
+					<span id="price9" value='1500'>1500원</span> <br/>
+					<select name="menu9Count" id="menu9Count" class='menuCount'>
+						<option value='0'>0</option>
+						<option value='1'>1</option>
+						<option value='2'>2</option>
+						<option value='3'>3</option>
+						<option value='4'>4</option>
+						<option value='5'>5</option>
+					</select>
+		             <select name="menu9HOT" id="menu9HOT" class='"HOTCount'>
+						<option value='HOT'>HOT</option>
+						<option value='ICE'>ICE</option>
+					</select>
+		            <input type='button' id='c9' value='선택'  id='btn'/>
+				</td>
+			</tr>
+
+			</table>
+		    <br/>
+		    <br/>
+		</div>   
+		
+		<div id="rightdiv">
+		<table id="listTable">
+			<tr id="listtitle">
+				<th colspan='4' id="titleText"><br/><img src="https://i.imgur.com/7syqFxb.png"><br/>주문내역<br/></th>
+			</tr>
+			<tr id="totallist">
+				<td colspan='4'>
+					총합 : <input type='text'  id='total' size=13/> 원 
+					<input type='button' id='result' value='주문하기'  id='btn'/>
+				</td>
+			</tr>
+			<tr id="listtr">
+				<td width="100">목록</td>
+		        <td width="75">HOT / ICE</td>
+				<td width="75">갯수</td>
+				<td width="50">삭제</td>
+			</tr>
+		</table>
+	</div>
+</form>
+</body>
+</html>

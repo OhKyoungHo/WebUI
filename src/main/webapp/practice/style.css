@@ -1,0 +1,320 @@
+@CHARSET "UTF-8";
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+body {
+	padding: 0px;
+	margin: 0px;
+    text-align: center;
+    height: 100vh;
+    background-image: url('http://overview.kr/wp-content/uploads/2018/10/stbsmain-1024x681.jpg');
+    background-repeat : no-repeat;
+    background-size : cover;
+}
+#rightdiv{
+	 background-color :#ffffff;
+}
+
+div{
+	float:left;
+	position: relative;
+    border-radius: 20px;
+    
+    }
+#rightdiv{
+	left: 10px;
+    border-radius: 20px;
+}
+td.menu {
+	padding: 10px;
+	text-align : center;
+}
+
+menutbest{
+	width:100%;
+}
+
+.menutbl{
+	margin:10px;
+	padding:0px;		
+	border:1px dotted black;
+	border-radius: 10px;
+	font-family: 'Nanum Gothic', serif;
+}
+.menutbl tr td {
+	padding-top: 30px;
+}
+.menutbl tr td img{
+	padding-bottom: 5px;
+}
+.menutbl tr td select{
+	margin: 10px;
+	padding:3px;
+}
+
+/* #menutitle{
+	height:100px;
+	background-color :#388a6b;
+	font-family: 'Jeju Gothic', serif;
+} */
+
+#titleText{
+    color: white;
+	font-size: 30px;
+	text-align : left;
+	padding-left: 100px;
+	padding-bottom:10px;
+    background-color :#388a6b;
+    border-radius: 20px;
+}
+
+.menus{
+	margin:10px;
+}
+
+#listTable{
+	margin:10px;
+	padding:0px;
+	border-collapse: collapse;
+	
+    
+}
+#listtitle{
+	height: 100px;
+	font-family: 'Jeju Gothic', serif;
+	background-color :#EEEAE3;
+    
+}
+#listtr{
+	height:50px;
+	border-bottom: 1px dotted;
+	font-family: 'Nanum Gothic', serif;
+    
+}
+#listTable td{
+	text-align : center;
+	border-bottom: 1px dotted;
+}
+#totallist{
+	font-family: 'Nanum Gothic', serif;
+	height:50px;
+}
+
+#leftdiv{
+    background-color:#1b3c35;
+}
+img{
+    width: 100px;
+}
+span{
+    color: white;
+}
+
+ul{
+    list-style: none;
+}
+li{
+    float: right;
+    margin-right:10px;
+}
+#menutitle > th{
+    position: relative;
+    height: 125px;
+    background:#388a6b;
+    border-radius: 20px;
+}
+input{
+	border-radius: 5px;
+}
+/*----------------------------------------------------------------------- */
+#topMenu {            /* topMenu의 ID를 가진 태그의 스타일 지정 */
+                        height: 30px; /* topMenu의 높이를 30px로 설정(제대로 설정 안하면 아래 내용이 깨짐) */
+                        width: 900px; /* topMenu의 넓이를 850px로 설정(제대로 설정 안하면 브라우져 넓이가 좁아지면 깨짐) */
+                font-family: 'Jeju Gothic', serif;
+                }
+                #topMenu ul li {                       /* topMenu의 ID를 가진 태그 안에 <ul> 태그 안에 <li> 태그의 스타일을 지정 */
+                        list-style: none;           /* <li> 태그는 위의 이미지처럼 목록을 나타내는 점을 없앤다  */
+                        color: white;                /* 글씨 색을 흰색으로 설정 */
+                        background-color: #388a6b;  /* 배경색을 진한 회색(RGB(2D,2D,2D)으로 설정 */
+                        float: left;                /* <li>태그들이 왼쪽에 흐르게 설정(그러면 아래있는 내용은 오른쪽으로 옴) */
+                        line-height: 30px;          /* 글씨가 가운데로 오도록 설정하기 위해 한줄의 높이를 30px로 설정 */
+                        vertical-align: middle;     /* 세로 정렬을 가운데로 설정(위의 line-height와 같이 설정 필요함) */
+                        text-align: center;         /* 글씨 정렬을 가운데로 설정 */
+                }
+                #topMenu .menuLink {                               /* topMenu 아이디를 가진 태그 안에 있는 menuLink 클래스 태그들의 스타일 설정 */
+                        text-decoration:none;                      /* 링크(<a> 태그)가 가지는 기본 꾸밈 효과(밑줄 등)을 없앰 */
+                        color: white;                              /* 폰트색을 흰색으로 설정 */
+                        display: block;                            /* 링크를 글씨가 있는 부분 뿐만아니라 전체 영역을 클릭해도 링크가 걸리게 설정 */
+                        width: 150px;                              /* 메뉴링크의 넓이 설정 */
+                        font-size: 16px;                           /* 폰트 사이즈 12px로 설정 */
+                        font-weight: bold;                         /* 폰트를 굵게 */
+                        font-family: "Trebuchet MS", Dotum, Arial; /* 기본 폰트 적용, 시스템 폰트를 종류별로 순서대로 */
+                }
+                #topMenu .menuLink:hover {           /* topMenu 아이디를 가진 태그 안에 menuLink클래스를 가진 태그에 마우스가 over되면 스타일 설정 */
+                        color: red;                   /* 글씨 색을 붉은색으로 설정 */
+                        background-color: #4d4d4d;    /* 배경색을 조금 더 밝은 회색으로 설정 */
+                }
+
+#leftdiv {
+                width: 200px;
+                height: 400px;
+                overflow: auto;
+                color: white;
+                padding: 5px;
+            }
+ 
+            #leftdiv::-webkit-scrollbar {
+                width: 20px; /*스크롤바의 너비*/
+                 display: none;
+            }
+ 
+            #leftdiv::-webkit-scrollbar-thumb {
+                background-color: yellow; /*스크롤바의 색상*/
+                background-clip: padding-box;
+                border: 4px solid transparent;
+                border-top-left-radius: 50px;
+                border-bottom-right-radius: 50px;
+            }
+ 
+            #leftdiv::-webkit-scrollbar-track {
+                background-color: #1b3c35; /*스크롤바 트랙 색상*/
+            }
+ 
+
+/*----------------------------------------------------------------------- */
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500,900);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+figure.snip1382 {
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 230px;
+  max-width: 100px;
+  max-height: 220px;
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+}
+figure.snip1382 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+figure.snip1382 img {
+  max-width: 100%;
+}
+figure.snip1382:after,
+figure.snip1382:before,
+figure.snip1382 figcaption:after,
+figure.snip1382 figcaption:before {
+  background: #0a0a0a;
+  height: 25%;
+  position: absolute;
+  content: '';
+  opacity: 0;
+  -webkit-transition: all 0.35s steps(4);
+  transition: all 0.35s steps(4);
+  z-index: 1;
+  left: 50%;
+  right: 50%;
+}
+figure.snip1382:before {
+  top: 0;
+  -webkit-transition-delay: 0;
+  transition-delay: 0;
+}
+figure.snip1382:after {
+  top: 25%;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+figure.snip1382 figcaption:before {
+  top: 50%;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+  z-index: -1;
+}
+figure.snip1382 figcaption:after {
+  top: 75%;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+  z-index: -1;
+}
+figure.snip1382 figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 30px;
+}
+figure.snip1382 h2,
+figure.snip1382 p,
+figure.snip1382 .icons {
+  margin: 0;
+  width: 100%;
+  opacity: 0;
+}
+figure.snip1382 h2 {
+  font-weight: 900;
+  text-transform: uppercase;
+}
+figure.snip1382 p {
+  font-weight: 300;
+}
+figure.snip1382 .icons {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+}
+figure.snip1382 i {
+  padding: 0px 10px;
+  display: inline-block;
+  font-size: 24px;
+  color: #ffffff;
+  text-align: center;
+  opacity: 0.8;
+  text-decoration: none;
+}
+figure.snip1382 i:hover {
+  opacity: 1;
+}
+figure.snip1382:hover:after,
+figure.snip1382.hover:after,
+figure.snip1382:hover:before,
+figure.snip1382.hover:before,
+figure.snip1382:hover figcaption:after,
+figure.snip1382.hover figcaption:after,
+figure.snip1382:hover figcaption:before,
+figure.snip1382.hover figcaption:before {
+  left: 0;
+  right: 0;
+  opacity: 0.8;
+}
+figure.snip1382:hover figcaption h2,
+figure.snip1382.hover figcaption h2,
+figure.snip1382:hover figcaption p,
+figure.snip1382.hover figcaption p,
+figure.snip1382:hover figcaption .icons,
+figure.snip1382.hover figcaption .icons {
+  -webkit-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+}
+figure.snip1382:hover figcaption h2,
+figure.snip1382.hover figcaption h2,
+figure.snip1382:hover figcaption .icons,
+figure.snip1382.hover figcaption .icons {
+  opacity: 1;
+}
+figure.snip1382:hover figcaption p,
+figure.snip1382.hover figcaption p {
+  opacity: 0.7;
+}
+
+

@@ -18,7 +18,7 @@
 <script type="text/javascript">
 	
 $(function(){
-	//1
+	//1 클래스 이름이 '.man', '.woman'인 것들의 style을 변경
 	$('.man').css({'background' : 'pink', 'color' : 'purple'})	
 	$('.woman').css({'background' : 'lightyellow','color' : 'orange'})	
 	
@@ -31,7 +31,7 @@ $(function(){
 		$(this).removeClass('active')
 	});
 	
-	//3
+	//3. 이미지를  클릭했을때 다른 이미지로 바꾸기
 	$('#divText').text('<img src="images/grim.jpg">');
 	$('#divHtml').html('<img src="images/grim.jpg">');
 	$('#divEmpty').empty();
@@ -41,6 +41,50 @@ $(function(){
 });
 	//var src = $('#changeGrim').attr('src');
 	//$('#changeGrim').attr('src',src.replace('puppy','cat'));
+	
+	//4.
+	/*
+	<요소 속성='값'>문자<요소>
+		-text() :태그사이의 문자를 가져오거나 지정하는 함수
+		-html() :태그사이의 문자를 가져오거나 html 요소로 인식하여 지정하는 함수
+		-attr() :태그 안에 속성값을 가져오거나 지정하는 함수
+	
+		★ val() : 사용자 입력값이나 선택값을 가져오거나 지정할 때 
+			-> value속성 
+	*/
+	$('#tf').val('여기에 이름')//val()안에 내용이 없으면 getter, 있으면 setter
+	//텍스트에어리어에는 "설명을 합니다"라는 문장을 지정
+	$('#ta').val('설명을 합니다.')
+	//콤보박스에는 '인천'을 선택
+	$('#sel').val('incheon')
+	//리스트에서는 '제주도','독도'를 선택(배열을 이용)
+	$('#sel_m').val(['seom1', 'seom3'])
+	
+	//5. 동적요소 생성하거나 이동할때
+	// - 부모요소.append(자식요소);
+	// - 자식요소.append(부모요소);
+	var actor =$('#actor');
+	var tae = $('#tae');
+	var su = $('#su');
+	var bin = $('#bin');
+	
+	actor.append(tae);
+	su.append(actor);
+	actor.append('<div id="han">한배우</div>');
+	
+	var n = $('<div/>');
+	n.text('두배우');
+	n.attr('id','du');
+	n.appendTo(actor);
+	
+	//6.each() 메서드는 매개 변수로 받은 것을 사용해 for in 반복문과 같이 배열이나 객체의 요소를 검사할 수 있는 메서드
+	$('.data').each(function(){		//명확하게 하기위해서
+		$(this).click(function(){
+			alert($(this).text())
+		})
+	});
+	
+	
 })
 	
 	
