@@ -3,10 +3,27 @@
 <head>
 <meta charset="UTF-8" />
 <title>jquery.cookie</title>
-<script type="text/javascript"   src="http://code.jquery.com/jquery-1.9.0.js"></script>
+<script type="text/javascript"   src="http://code.jquery.com/jquery-3.6.1.js"></script>
 <script type="text/javascript"   src="js/jquery.cookie.js"></script>
 <script type="text/javascript">
-
+	//쿠키(cookie) : 웹클라이언트(웹브라우저)에 사용자 정보를 저장
+	
+$(function(){
+	
+	//화면시작시 쿠키 가져오기
+	var c = $.cookie('myemail');
+	//이메일 입력란에 전에 입력한 이메일 값 넣어놓기
+	$('#txtMail').val(c)
+	
+	//송신버튼이 눌렸을때→ 쿠키 저장
+	$('#btnSave').click(function(){
+		//쿠키에 메일을 저장(하루동안 쿠키 저장지속)
+		$.cookie('myemail',$('#txtMail').val(),{expires:1})
+		$('#txtMail').val('')	//이메일 입력하는 부분 공백으로 지정
+	})
+	
+	
+})	
 </script>
 </head>
 <body>
