@@ -1,7 +1,7 @@
 $(function(){
 	
-	var totalVal = $("#total", opener.document).val();
-   	$('#pay_total').val(totalVal);
+	var totalVal = $("#total", opener.document).val();		//"#total"의 vlaue 값 저장하기
+   	$('#pay_total').val(totalVal);							//"#pay_total"에 value 값 넣기
    
    
   
@@ -38,7 +38,7 @@ $(function(){
 		$('.list', opener.document).remove();								//추가한 tr 모두 삭제
 		$('#total', opener.document).attr('value',0);						//최종금액 내용 0으로 설정
 		$('.menuCount', opener.document).val('0');							//메뉴 수량을 표시하는 값을 0으로 설정
-		$(opener.location).attr("href","home.html"); 
+		$(opener.location).attr("href","home.html"); 						//home.html로 돌아가기
 		window.close();
 	})
 	

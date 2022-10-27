@@ -85,15 +85,14 @@
 	
 				
 				
-	/* 주문내역의 삭제 버튼을 누를 경우 */
-	$("#listTable").on("click", ".del", function() { 					//listTable안의 .del을 선택
-		sum -= $(this).parent().parent().find('td:eq(2)').text(); 	//this(.del)의 부모(td)의 부모(tr)의 자식요소(td)중 3번째의 text 저장
-		$('#total').attr('value',sum);											//최종금액 내용 설정
-   	 	$(this).parent().parent().remove();       							//this(.del)의 부모(td)의 부모(tr)를 삭제
-    	$('.menuCount').val('0');	
-     });
-	
-	
+   /* 주문내역의 삭제 버튼을 누를 경우 */
+   $("#listTable").on("click", ".del", function() {                //listTable안의 btn을 선택
+      sum -= $(this).parent().parent().find('td:eq(4)').text();    //this(btn)의 부모(td)의 부모(tr)의 자식요소(td)중 3번째의 text 저장
+      $('#total').attr('value',sum);                                 //최종금액 내용 설정
+          $(this).parent().parent().remove();                            //this(btn)의 부모(td)의 부모(tr)를 삭제
+          $('.menuCount').val('0');
+     });//click
+   
 	/* 주문완료 버튼을 누를 경우 */
 	$('#btn').click(function(){
 		window.open('pay.html','주문내역','width=380, height=450');		//'pay.html'열기

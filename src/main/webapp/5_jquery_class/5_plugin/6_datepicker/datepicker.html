@@ -6,13 +6,31 @@
 <link rel="stylesheet" type="text/css"
   href="http://code.jquery.com/ui/1.10.0/themes/ui-lightness/jquery-ui.css" />
 <script type="text/javascript"  src="http://code.jquery.com/jquery-1.9.0.js"></script>
-<script type="text/javascript"   src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+<script type="text/javascript"  src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
 <script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/i18n/jquery-ui-i18n.min.js"></script>
+<script type="text/javascript">
 
+$(function(){
+	$.datepicker.setDefaults($.datepicker.regional['ko']);			//한국어로 설정
+	$('#datepicker').datepicker({
+		showOn :'button',							//버튼을 캘린더에 표시
+		buttonImage : 'images/calendar.gif',		//버튼에 이미지 넣기
+		showButtonPanel : true,						//캘린더 하단에 버튼 패널 표시여부 선택
+		showAnim :'slideDown'
+	});
+	
+	//날짜 지정
+	var mydate = new Date('2020-02-02')
+	$('#datepicker').datepicker('setDate',mydate)	//달력에 지정한 날짜로 나타나도록 설정
+})
+
+</script>
 
 </head>
 <body>
 <label for="date">날짜:</label>
 <input id="datepicker" type="text">
+<hr/>
+<input type='date'>
 </body>
 </html>
